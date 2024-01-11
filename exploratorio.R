@@ -32,6 +32,9 @@ data<- data[,2:6]
 # Tranformamos a factor la varaibles categóricas y respuesta
 data[,2:5]<- lapply(data[,2:5], as.factor)
 
+# Guardamos el conjunto de datos para ser utilizado a posteriori
+save(data, file = "data_models.RData")
+
 ## Gráficas para la sección 5.1
 
 # Histograma de la edad en función de tipo de tumor
