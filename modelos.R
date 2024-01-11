@@ -17,7 +17,7 @@ trainDataOH <- data[indx, ]
 testDataOH <- data[-indx, ]
 
 # Aplicamos One-Hot Encoding a las variables categóricas (excepto la variable respuesta)
-dummies <- dummyVars("~ . -Type", data = trainData)
+dummies <- dummyVars("~ . ", data = trainData[,-5])
 trainDataOH <- as.data.frame(predict(dummies, newdata = trainDataOH))
 testDataOH <- as.data.frame(predict(dummies, newdata = testDataOH))
 
